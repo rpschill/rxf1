@@ -1,0 +1,19 @@
+.race-table {
+  overflow: auto;
+  height: 100%;
+  max-height: 650px;
+}
+
+.spinner-container mat-spinner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.race-row {
+  cursor: pointer;
+}
+
+.open-icon {
+  margin-left: 100px;
+}

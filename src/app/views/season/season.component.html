@@ -1,0 +1,14 @@
+<div class="season-container">
+  <h3>{{ season }}</h3>
+
+  <mat-tab-group *ngIf="season">
+    <mat-tab>
+      <ng-template mat-tab-label>{{ tabs[0] }}</ng-template>
+      <app-drivers [season]="season"></app-drivers>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>{{ tabs[1] }}</ng-template>
+      <app-races [season]="season"></app-races>
+    </mat-tab>
+  </mat-tab-group>
+</div>

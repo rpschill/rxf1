@@ -1,0 +1,62 @@
+<div class="race-detail-container" *ngIf="race">
+  <h1>{{ race.raceName }}</h1>
+  <mat-card class="info-card">
+    <mat-card-content class="race-stats">
+      <mat-list role="list">
+        <mat-list-item role="listitem"><span class="detail-headers">Round:</span> {{ race.round }}</mat-list-item>
+        <mat-list-item role="listitem"><span class="detail-headers">Date:</span> {{ race.date | date:'shortDate' }}</mat-list-item>
+      </mat-list>
+      <mat-list role="list">
+        <mat-list-item role="listitem"><span class="detail-headers">Circuit:</span> {{ race.Circuit.circuitName }}</mat-list-item>
+        <mat-list-item role="listitem"><span class="detail-headers">Location:</span> {{ race.Circuit.Location.locality }}, {{ race.Circuit.Location.country }}</mat-list-item>
+      </mat-list>
+      <div class="total-title">
+        <h2>Total finished:</h2>
+        <div class="total-display">
+          {{ totalFinished$ | async }}
+        </div>
+      </div>
+      <div class="total-title">
+        <h2>Total +1 lap:</h2>
+        <div class="total-display">
+          {{ totalPlusOne$ | async }}
+        </div>
+      </div>
+      <div class="total-title">
+        <h2>Total accidents:</h2>
+        <div class="total-display">
+          {{ totalAccidents$ | async }}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="cards-container">
+    <mat-card class="details-card">
+      <mat-card-header>
+        <mat-card-title>Final Results</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-final-results [season]="season" [raceId]="raceId"></app-final-results>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="details-card">
+      <mat-card-header>
+        <mat-card-title>Qualifying Results</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-qualifying-results [season]="season" [raceId]="raceId"></app-qualifying-results>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <mat-card class="standings-card">
+    <mat-card-header>
+      <mat-card-title>Standings</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-standings [season]="season" [raceId]="raceId"></app-standings>
+    </mat-card-content>
+  </mat-card>
+</div>

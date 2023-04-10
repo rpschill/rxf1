@@ -1,0 +1,35 @@
+<div class="app-container">
+  <div class="header">
+    <p>
+      <mat-toolbar color="primary">
+        <span class="title-link">
+          <a [routerLink]="['']">{{ title }}</a>
+        </span>
+      </mat-toolbar>
+    </p>
+  </div>
+
+  <mat-drawer-container class="drawer-container">
+    <mat-drawer mode="side" opened class="sidenav">
+      <div class="season-list">
+        <h2 class="season-title">Seasons</h2>
+        <mat-nav-list role="list">
+          <a
+            mat-list-item
+            [routerLink]="['/seasons', season]"
+            role="listitem"
+            *ngFor="let season of seasonList"
+          >
+            {{ season }}
+          </a>
+        </mat-nav-list>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="main-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+</div>

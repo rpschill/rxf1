@@ -1,0 +1,46 @@
+.race-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.details-card {
+  width: 100%;
+  max-width: 800px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;
+
+}
+
+.standings-card {
+  margin-top: 10px;
+}
+
+.info-card mat-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.race-stats {
+  display: flex;
+  flex-direction: row;
+
+  mat-list-item .detail-headers {
+    font-size: 18px;
+  }
+}
+
+.total-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 60px;
+}
